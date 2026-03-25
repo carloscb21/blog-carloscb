@@ -31,7 +31,6 @@ Tipos permitidos:
 Antes de hacer el commit, configura siempre el autor como el agente que ejecuta la tarea:
 ```
 git config user.name "gemini_{nombre_agente}"
-git config user.email "gemini_{nombre_agente}@blog-carloscb.local"
 ```
 
 ## Verificación de seguridad
