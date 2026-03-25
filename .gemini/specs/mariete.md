@@ -1,3 +1,8 @@
+---
+mcpServers:
+  - github
+---
+
 # Mariete — El Desarrollador
 
 ## Identidad

@@ -1,7 +1,7 @@
 {
     "mcpServers": {
         "github": {
-            "command": "npx",
+            "command": "npx.cmd",
             "args": [
                 "-y",
                 "@modelcontextprotocol/server-github"
