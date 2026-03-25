@@ -1,0 +1,29 @@
+ESTE FICHERO ES TODAS LAS DIFICULTADES QUE TUVE ARREGLAR Y QUE LA IA NO ME INDICO DESDE EL PRINCIPIO
+
+Requisitos previos:
+* Tener instalado gemini cli(quizas esto es obvio pero no lo veo anda obvio para una persona que no sabe nada de programacion)
+* Tener conocimientos de como usar gemini cli de manera eficiente, no usarlo como la web
+* Saber conceptos como skills, mcp o hooks
+* Crear el proyecto en github
+
+Problemas con Claude(sonnet 4.6):
+* Claude me indica que no sabe como funciona antigravity
+* Me indica que no entiende como funciona el /init cuando claude code usa el mismo comando para la misma logica
+* Genere un directorio /docs para la documentacion pero GEMINI lo quiere usar como specs, esto no es lo mejor porque seria un gasto enorme de tokens ya que cada agente tendria que mirar todos los documentos hasta encontrar el suyo, lo cargaria de contexto y por tanto, mas gasto
+* Claude me indico directamente ejecutar un spec cuando el primer paso es ejecutar el comando /init
+* Me indico que genera el proyecto sin definir un .env para las variables de entorno(como la configuracion de bbdd) y tampoco me recomendo indicar en GEMINI.md que no se debe tocar ni leer el .env
+* Al ejecutar el agente de mariete, creo el .env.example, no el .env -> tengo que corregirlo manualmente
+* No se acordo del MCP cuando genero la skill de github
+
+Gemini AI PRO:
+* El agente de mariete se equivoco, estaba usando python 3.8 y no el 3.12.9 que es la ultima version del entorno.
+* esta generando un entorno virtual cuando ya existe uno en el proyecto con la version de python correcta
+* .env.example que genero pide que pongas la key de django
+* .env.example no lo metio en .gitignore
+* tuve que añadir manualmente .gemini/settings.json y tambien al .gitignore
+
+Programacion
+* Que existe virtualenv(claude en ningun momento me lo recomendo para arrancar el proyecto) 
+* Como implementar y usar virtualenv en el proyecto
+
+
