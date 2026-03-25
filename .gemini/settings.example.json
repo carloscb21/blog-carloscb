@@ -1,0 +1,19 @@
+{
+    "mcpServers": {
+        "github": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "TU_TOKEN_PEGALO_AQUI"
+            }
+        }
+    },
+    "hooks": {
+        "PreToolUse": {
+            "command": "python .gemini/hooks/seguridad.py"
+        }
+    }
+}
