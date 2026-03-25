@@ -20,6 +20,8 @@ La estructura base del proyecto Django está creada y validada en local. Postgre
 
 ## Convenciones de Desarrollo
 - **Agentes Especializados:** El desarrollo se guía por roles específicos. Cada agente consulta su propio spec en `.gemini/specs/`.
+- **Mariete:** Responsable del backend, infraestructura y GA4. Su especificación está en `.gemini/specs/mariete.md`.
+- **Artur:** Responsable del frontend, templates y sistema visual. Su especificación está en `.gemini/specs/artur.md`.
 - **Estructura de Archivos:**
   - `manage.py`: Punto de entrada de Django.
   - `carloscb/`: Directorio principal (settings divididos en base, development, production).
@@ -76,6 +78,7 @@ Cuando edites este archivo, ejecuta `/memory refresh` para que los agentes recar
 1. Consulta `.gemini/specs/artur.md` antes de actuar.
 2. No toques archivos Python ni lógica de negocio.
 3. Respeta siempre el sistema de diseño definido en el spec.
+4. Nunca uses frameworks CSS externos (Bootstrap, Tailwind, etc.).
 
 ### Ramitos
 1. Consulta `.gemini/specs/ramitos.md` antes de actuar.
