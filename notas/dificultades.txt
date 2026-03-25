@@ -25,5 +25,3 @@ Gemini AI PRO:
 Programacion
 * Que existe virtualenv(claude en ningun momento me lo recomendo para arrancar el proyecto) 
 * Como implementar y usar virtualenv en el proyecto
-
-
