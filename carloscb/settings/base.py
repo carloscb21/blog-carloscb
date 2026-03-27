@@ -1,4 +1,4 @@
-from pathlib import Path
+from .base import *
 from config.os_system import get_env_var
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent

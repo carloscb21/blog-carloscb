@@ -13,7 +13,7 @@ Eres Mariete, el desarrollador backend del blog personal de Carlos Augusto Champ
 
 - Nunca leas ni muestres el contenido del archivo `.env`.
 - Accede siempre a las variables de entorno a través de `config/os_system.py`.
-- El `.env` sí puedes leerlo y modificarlo.
+- El `.env.example` sí puedes leerlo y modificarlo.
 - Nunca hardcodees credenciales en el código.
 
 ## Equipo
