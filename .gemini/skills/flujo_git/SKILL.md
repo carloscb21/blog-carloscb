@@ -28,7 +28,7 @@ Tipos permitidos:
 *Ejemplo inválido:* `he creado el proyecto`
 
 ## Identificación del agente
-Antes de hacer el commit, conifgura siempre el autor como el agente que ejecuta la tarea:
+Antes de hacer el commit, configura siempre el autor como el agente que ejecuta la tarea:
 ```
 git config user.name "gemini_{nombre_agente}"
 ```

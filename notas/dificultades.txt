@@ -22,7 +22,9 @@ Gemini AI PRO:
 * .env.example no lo metio en .gitignore
 * tuve que añadir manualmente .gemini/settings.json y tambien al .gitignore
 * Hay muchas veces que verifica las tareas pero no lanza los comandos, y si no se lo indico(tengo experiencia en django) no lo hace  el proyecto funciona a priori pero no se que problemas puedo encontrar luego
+* Cuando he usado el MCP para subir los cambios del agente de Mario, ha generado conflictos por todas partes.
 
 Programacion
 * Que existe virtualenv(claude en ningun momento me lo recomendo para arrancar el proyecto) 
 * Como implementar y usar virtualenv en el proyecto
+
