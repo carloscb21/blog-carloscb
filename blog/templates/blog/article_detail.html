@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }} | Carlos Augusto Champa Bujaico{% endblock %}
+{% block description %}{{ post.meta_description|default:post.excerpt }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .article-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 0.5px solid #D6D4CC;
+    }
+    .article-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #1A1A1A;
+        margin-bottom: 1rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    .article-meta {
+        font-family: 'Source Serif 4', serif;
+        color: #555555;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    .article-category {
+        color: #1B3A7A;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+    }
+    .article-content {
+        font-family: 'Source Serif 4', serif;
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: #1A1A1A;
+        font-weight: 300;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .article-content h2, .article-content h3 {
+        font-family: 'Playfair Display', serif;
+        color: #1A1A1A;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .article-content p {
+        margin-bottom: 1.5rem;
+    }
+    .article-content a {
+        color: #1B3A7A;
+        text-decoration: underline;
+    }
+    .back-link {
+        display: inline-block;
+        margin-top: 3rem;
+        color: #1B3A7A;
+        font-family: 'Source Serif 4', serif;
+        text-decoration: none;
+        font-weight: 400;
+        border: 0.5px solid #D6D4CC;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    .back-link:hover {
+        background: #FAFAF8;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<article class="article-container">
+    <header class="article-header">
+        <span class="article-category">{{ post.category.name }}</span>
+        <h1 class="article-title">{{ post.title }}</h1>
+        <div class="article-meta">
+            <span>{{ post.published_at|date:"d M Y" }}</span>
+        </div>
+    </header>
+    
+    <div class="article-content">
+        {{ post.body|safe|linebreaks }}
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="/" class="back-link">← Volver al inicio</a>
+    </div>
+</article>
+{% endblock %}
