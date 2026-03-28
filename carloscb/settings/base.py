@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     # Third party
     'rest_framework',
     'rest_framework.authtoken',
+    'markdownify',
     # Local apps
     'blog',
     'projects',
@@ -81,4 +82,17 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ]
+}
+
+MARKDOWNIFY = {
+    "default": {
+        "WHITELIST_TAGS": [
+            'a', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ul', 'ol', 'li',
+            'img', 'strong', 'b', 'em', 'i', 'code', 'pre', 'blockquote',
+            'span', 'div', 'hr', 'br', 'table', 'thead', 'tbody', 'tr', 'th', 'td'
+        ],
+        "WHITELIST_ATTRS": [
+            'href', 'src', 'alt', 'class', 'title'
+        ],
+    }
 }
