@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Artículos | Carlos Augusto Champa Bujaico{% endblock %}
+{% block description %}Listado completo de artículos y reflexiones.{% endblock %}
+
+{% block extra_css %}
+<style>
+    .list-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding-bottom: 2rem;
+        border-bottom: 0.5px solid #D6D4CC;
+    }
+    .list-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        color: #1A1A1A;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    .list-subtitle {
+        font-family: 'Source Serif 4', serif;
+        color: #555555;
+        font-size: 1.125rem;
+    }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        font-family: 'Source Serif 4', serif;
+    }
+    .page-btn {
+        display: inline-block;
+        color: #1B3A7A;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border: 0.5px solid #D6D4CC;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+    .page-btn:hover {
+        background: #FAFAF8;
+    }
+    .current-page {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        color: #555555;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+    <header class="list-header">
+        <h1 class="list-title">Todos los artículos</h1>
+        <p class="list-subtitle">Reflexiones sobre tecnología, código y diseño.</p>
+    </header>
+
+    <div class="grid-3">
+        {% for post in posts %}
+        <article class="article-card">
+            <span class="tag">{{ post.category.name }}</span>
+            <h3 class="article-card-title"><a href="{% url 'blog:article_detail' post.slug %}">{{ post.title }}</a></h3>
+            <p class="article-card-extract">{{ post.excerpt }}</p>
+        </article>
+        {% empty %}
+        <p>No hay artículos publicados aún.</p>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-btn">← Anterior</a>
+        {% endif %}
+        
+        <span class="current-page">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}" class="page-btn">Siguiente →</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</section>
+{% endblock %}
