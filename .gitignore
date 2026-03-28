@@ -27,3 +27,7 @@ staticfiles/
 *.swp
 
 .gemini/settings.json
+
+script_copito.py
+script_post_3.py
+update_featured.py
