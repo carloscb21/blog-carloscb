@@ -20,70 +20,57 @@
 </section>
 
 <!-- Artículo Destacado -->
+{% if featured_post %}
 <section class="section">
     <div class="featured-article">
         <div class="featured-content">
             <span class="tag">Destacado</span>
-            <h2 class="featured-title"><a href="#">El valor de la simplicidad en la arquitectura de software</a></h2>
-            <p class="featured-extract">Por qué la complejidad accidental es el mayor enemigo de los equipos de desarrollo y cómo el diseño iterativo puede salvarnos.</p>
+            <h2 class="featured-title"><a href="{% url 'blog:article_detail' featured_post.slug %}">{{ featured_post.title }}</a></h2>
+            <p class="featured-extract">{{ featured_post.excerpt }}</p>
         </div>
         <div class="featured-meta">
-            <span>25 Mar 2026</span><br>
-            <span>5 min lectura</span>
+            <span>{{ featured_post.published_at|date:"d M Y" }}</span><br>
+            <span>Lectura rápida</span>
         </div>
     </div>
 </section>
+{% endif %}
 
 <!-- Últimos Artículos -->
+{% if latest_posts %}
 <section class="section">
     <header class="section-header">
         <h2 class="section-title">Últimos escritos</h2>
     </header>
     
     <div class="grid-3">
-        <!-- Card 1 -->
+        {% for post in latest_posts %}
         <article class="article-card">
-            <span class="tag">Django</span>
-            <h3 class="article-card-title"><a href="#">Construyendo APIs resilientes con Django Ninja</a></h3>
-            <p class="article-card-extract">Un viaje técnico abandonando el DRF tradicional hacia soluciones modernas con Pydantic y tipado estático.</p>
+            <span class="tag">{{ post.category.name }}</span>
+            <h3 class="article-card-title"><a href="{% url 'blog:article_detail' post.slug %}">{{ post.title }}</a></h3>
+            <p class="article-card-extract">{{ post.excerpt }}</p>
         </article>
-        
-        <!-- Card 2 -->
-        <article class="article-card">
-            <span class="tag">Automatización</span>
-            <h3 class="article-card-title"><a href="#">Agentes autónomos en flujos de CI/CD</a></h3>
-            <p class="article-card-extract">Cómo delegar tareas repetitivas de revisión de código a modelos de lenguaje sin perder el control.</p>
-        </article>
-        
-        <!-- Card 3 -->
-        <article class="article-card">
-            <span class="tag">Reflexión</span>
-            <h3 class="article-card-title"><a href="#">La falacia del programador 10x</a></h3>
-            <p class="article-card-extract">Más allá del mito: por qué la comunicación grupal supera siempre a las mentes brillantes asiladas.</p>
-        </article>
+        {% endfor %}
     </div>
 </section>
+{% endif %}
 
 <!-- Proyectos -->
+{% if active_projects %}
 <section class="section">
     <header class="section-header">
         <h2 class="section-title">Proyectos recientes</h2>
     </header>
     
     <div class="grid-2">
-        <!-- Proyecto 1 -->
+        {% for project in active_projects %}
         <div class="project-card">
-            <span class="tag">Herramienta CLI</span>
-            <h3 class="project-card-title"><a href="#">Gemini Agent Framework</a></h3>
-            <p class="project-card-desc">Un microframework en Python para orquestar agentes conversacionales en la terminal, diseñado para ser rápido y extensible.</p>
+            <span class="tag">{% if project.tags.exists %}{{ project.tags.first.name }}{% else %}Proyecto{% endif %}</span>
+            <h3 class="project-card-title"><a href="{% if project.url %}{{ project.url }}{% else %}{{ project.repo_url }}{% endif %}" target="_blank">{{ project.title }}</a></h3>
+            <p class="project-card-desc">{{ project.description }}</p>
         </div>
-        
-        <!-- Proyecto 2 -->
-        <div class="project-card">
-            <span class="tag">Web App</span>
-            <h3 class="project-card-title"><a href="#">Minimal Analytics</a></h3>
-            <p class="project-card-desc">Alternativa open-source a Google Analytics, enfocada enteramente en la privacidad y con un bundle inferior a 1KB.</p>
-        </div>
+        {% endfor %}
     </div>
 </section>
+{% endif %}
 {% endblock %}
