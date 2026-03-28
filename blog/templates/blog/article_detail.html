@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load markdownify %}
 
 {% block title %}{{ post.title }} | Carlos Augusto Champa Bujaico{% endblock %}
 {% block description %}{{ post.meta_description|default:post.excerpt }}{% endblock %}
@@ -84,7 +85,7 @@
     </header>
     
     <div class="article-content">
-        {{ post.body|safe|linebreaks }}
+        {{ post.body|markdownify }}
     </div>
     
     <div style="text-align: center;">
