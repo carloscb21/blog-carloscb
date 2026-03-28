@@ -23,6 +23,7 @@ La estructura base del proyecto Django está creada y validada en local. Postgre
 - **Mariete:** Responsable del backend, infraestructura y GA4. Su especificación está en `.gemini/specs/mariete.md`.
 - **Artur:** Responsable del frontend, templates y sistema visual. Su especificación está en `.gemini/specs/artur.md`.
 - **Ramitos:** Responsable del contenido y redacción. Su especificación está en `.gemini/specs/ramitos.md`.
+- **Copito:** Editor Jefe — estrategia editorial y artículo destacado. Su especificación está en `.gemini/specs/copito.md`.
 - **Estructura de Archivos:**
   - `manage.py`: Punto de entrada de Django.
   - `carloscb/`: Directorio principal (settings divididos en base, development, production).

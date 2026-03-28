@@ -16,6 +16,7 @@ class PostSerializer(serializers.ModelSerializer):
     # Inclusiones detalladas para modo lectura
     category_detail = CategorySerializer(source='category', read_only=True)
     tags_detail = TagSerializer(source='tags', many=True, read_only=True)
+    slug = serializers.SlugField(required=False, allow_blank=True)
     
     class Meta:
         model = Post
@@ -24,7 +25,7 @@ class PostSerializer(serializers.ModelSerializer):
             'status', 'featured', 'likes', 'created_at', 'updated_at', 
             'published_at', 'category', 'tags', 'category_detail', 'tags_detail'
         ]
-        read_only_fields = ['id', 'slug', 'likes', 'created_at', 'updated_at']
+        read_only_fields = ['id', 'likes', 'created_at', 'updated_at']
 
 class ProjectSerializer(serializers.ModelSerializer):
     tags_detail = TagSerializer(source='tags', many=True, read_only=True)
