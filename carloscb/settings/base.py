@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 from pathlib import Path
-=======
-from .base import *
->>>>>>> 8779ec3add40d4555f605905e2a8dc2a806ea6cb
 from config.os_system import get_env_var
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -21,10 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Third party
     'rest_framework',
-<<<<<<< HEAD
     'rest_framework.authtoken',
-=======
->>>>>>> 8779ec3add40d4555f605905e2a8dc2a806ea6cb
     # Local apps
     'blog',
     'projects',
@@ -79,7 +72,6 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -90,5 +82,3 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ]
 }
-=======
->>>>>>> 8779ec3add40d4555f605905e2a8dc2a806ea6cb
